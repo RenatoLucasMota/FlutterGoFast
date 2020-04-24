@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gofast/app/app_controller.dart';
-import 'package:flutter_gofast/app/core/intercionalization/app_localizations.dart';
+import 'package:flutter_gofast/app/core/features/localization/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -21,6 +21,7 @@ class AppWidget extends StatelessWidget {
         ],
         localizationsDelegates: [
           AppLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
         ],

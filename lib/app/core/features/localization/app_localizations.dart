@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 
-import 'package:flutter_gofast/app/core/intercionalization/app_localization_delegate.dart';
+import 'package:flutter_gofast/app/core/features/localization/app_localization_delegate.dart';
+
 
 class AppLocalizations {
   final Locale locale;

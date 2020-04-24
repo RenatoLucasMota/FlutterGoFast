@@ -26,11 +26,11 @@ mixin _$AppController on _AppControllerBase, Store {
     }, _$themeAppAtom, name: '${_$themeAppAtom.name}_set');
   }
 
-  final _$getThemeDataAsyncAction = AsyncAction('getThemeData');
+  final _$loadThemeDataAsyncAction = AsyncAction('loadThemeData');
 
   @override
-  Future getThemeData() {
-    return _$getThemeDataAsyncAction.run(() => super.getThemeData());
+  Future loadThemeData() {
+    return _$loadThemeDataAsyncAction.run(() => super.loadThemeData());
   }
 
   final _$setThemeDataAsyncAction = AsyncAction('setThemeData');

@@ -19,16 +19,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # Localização e idioma
   flutter_localizations:
     sdk: flutter
+  # Rotas, Injeção de Dependencia
   flutter_modular: ^1.1.2
+  # Gerencia de Estado
   mobx: ^1.1.1
+  # Gerencia de Estado
   flutter_mobx: ^1.1.0
+  # Local Storage
   shared_preferences: ^0.5.6+3
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  # Firebase
+  cloud_firestore: ^0.13.5
+  # Icones Cupertino
   cupertino_icons: ^0.1.2
+  # Mostra hints/warnings quando foge do padrão Dart 
+  effective_dart: ^1.2.1
 
 dev_dependencies:
   flutter_test:

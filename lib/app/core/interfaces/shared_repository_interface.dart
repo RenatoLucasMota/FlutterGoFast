@@ -1,5 +1,10 @@
+import 'package:flutter/material.dart';
+
 abstract class ISharedRepositoryInterface {
-  setInstance();
-  dynamic getValue<T>(String key);
-  Future<bool> setValue<T>(String key, dynamic value);
+  String redUserInfo();
+  saveUserInfo(String userInfo);
+
+  Future<ThemeMode> readThemeMode();
+  Future<bool> saveThemeMode(ThemeMode themeMode);
+
 }
