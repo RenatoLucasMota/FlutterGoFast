@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gofast/app/core/features/localization/app_localizations.dart';
+
+import 'app_localizations.dart';
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const AppLocalizationsDelegate();
@@ -11,7 +12,7 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
 
   @override
   Future<AppLocalizations> load(Locale locale) async {
-    AppLocalizations localizations = AppLocalizations(locale);
+    var localizations = AppLocalizations(locale);
     await localizations.load();
     return localizations;
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gofast/app/core/features/localization/app_localizations.dart';
+
+import 'app_localizations.dart';
 
 class AppTranslate {
   final BuildContext context;

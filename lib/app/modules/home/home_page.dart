@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_gofast/app/modules/home/home_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter/material.dart';
+import '../../modules/home/home_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override

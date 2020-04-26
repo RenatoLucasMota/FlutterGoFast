@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gofast/app/core/features/local_storage/local_storage.dart';
-import 'package:flutter_gofast/app/core/interfaces/shared_repository_interface.dart';
+import '../../core/features/local_storage/local_storage.dart';
+import '../../core/interfaces/shared_repository_interface.dart';
 
 class SharedRepository implements ISharedRepositoryInterface {
-  static const String THEME_MODE = 'theme_mode';
-  static const String THEME_MODE_DARK = "ThemeMode.dark";
-  static const String THEME_MODE_LIGHT = "ThemeMode.light";
+  static const String constThemeMode = 'theme_mode';
+  static const String constThemeModeDark = "ThemeMode.dark";
+  static const String constThemeModeLight = "ThemeMode.light";
 
   @override
   String redUserInfo() {
@@ -13,18 +13,18 @@ class SharedRepository implements ISharedRepositoryInterface {
   }
 
   @override
-  saveUserInfo(String userInfo) {
+  void saveUserInfo(String userInfo) {
     return null;
   }
 
   @override
   Future<ThemeMode> readThemeMode() async {
-    return await LocalStorage.getValue<String>(THEME_MODE).then((value) {
+    return await LocalStorage.getValue<String>(constThemeMode).then((value) {
       switch (value) {
-        case THEME_MODE_DARK:
+        case constThemeModeDark:
           return ThemeMode.dark;
           break;
-        case THEME_MODE_LIGHT:
+        case constThemeModeLight:
           return ThemeMode.light;
           break;
         default:
@@ -37,6 +37,6 @@ class SharedRepository implements ISharedRepositoryInterface {
   @override
   Future<bool> saveThemeMode(ThemeMode themeMode) async {
     return await LocalStorage.setValue<String>(
-        THEME_MODE, themeMode.toString());
+        constThemeMode, themeMode.toString());
   }
 }

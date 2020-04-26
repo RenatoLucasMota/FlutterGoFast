@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gofast/app/core/features/theme/app_theme_dark.dart';
-import 'package:flutter_gofast/app/core/features/theme/app_theme_light.dart';
-import 'package:flutter_gofast/app/core/interfaces/theme_app_interface.dart';
+import '../../../core/features/theme/app_theme_dark.dart';
+import '../../../core/features/theme/app_theme_light.dart';
+import '../../../core/interfaces/theme_app_interface.dart';
 
 class AppThemeFactory {
   static IThemeAppInterface getTheme(ThemeMode themeMode) {

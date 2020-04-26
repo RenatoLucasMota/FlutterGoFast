@@ -32,16 +32,17 @@ dependencies:
   shared_preferences: ^0.5.6+3
   # Firebase
   cloud_firestore: ^0.13.5
+  firebase_auth: ^0.16.0
+  google_sign_in: ^4.4.4
   # Icones Cupertino
   cupertino_icons: ^0.1.2
-  # Mostra hints/warnings quando foge do padrão Dart 
-  effective_dart: ^1.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   mobx_codegen: ^1.0.3
   build_runner:
+  effective_dart: ^1.2.0
 
 
 # For information on the generic Dart part of this file, see the
