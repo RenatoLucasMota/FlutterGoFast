@@ -5,22 +5,22 @@ class LocalStorage {
     return await setInstance().then((sharedPreferences) {
       switch (T) {
         case double:
-          return sharedPreferences.getDouble(key);
+          return sharedPreferences.getDouble(key) ?? 0;
           break;
         case int:
-          return sharedPreferences.getInt(key);
+          return sharedPreferences.getInt(key) ?? 0;
           break;
         case String:
-          return sharedPreferences.getString(key);
+          return sharedPreferences.getString(key) ?? '';
           break;
         case List:
-          return sharedPreferences.getStringList(key);
+          return sharedPreferences.getStringList(key) ?? [];
           break;
         case bool:
-          return sharedPreferences.getBool(key);
+          return sharedPreferences.getBool(key) ?? false;
           break;
         default:
-          return sharedPreferences.getString(key);
+          return sharedPreferences.getString(key) ?? '';
       }
     });
   }

@@ -14,6 +14,7 @@ class AppWidget extends StatelessWidget {
         title: 'Flutter GoFast',
         initialRoute: '/',
         theme: Modular.get<AppController>().themeApp.getTheme(),
+        themeMode: Modular.get<AppController>().themeMode,
         navigatorKey: Modular.navigatorKey,
         onGenerateRoute: Modular.generateRoute,
         supportedLocales: [

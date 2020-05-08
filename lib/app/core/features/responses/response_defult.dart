@@ -5,5 +5,9 @@ class DefaultResponse<T> {
   final String message;
   final ResponseStatus status;
 
+  bool get success => status == ResponseStatus.rsSuccess;
+
+  bool get failed => status == ResponseStatus.rsFailed;
+
   DefaultResponse({this.object, this.message, this.status});
 }
