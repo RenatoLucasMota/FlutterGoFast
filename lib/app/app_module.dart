@@ -4,11 +4,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'app_controller.dart';
 import 'app_widget.dart';
+import 'core/consts/routers_const.dart';
 import 'core/interfaces/auth_repository_interface.dart';
 import 'core/interfaces/shared_repository_interface.dart';
 import 'core/repositories/auth_repository.dart';
 import 'core/repositories/shared_repository.dart';
 import 'modules/home/home_module.dart';
+import 'modules/intro/intro_module.dart';
+import 'modules/login/login_module.dart';
 import 'modules/splash/splash_page.dart';
 
 class AppModule extends MainModule {
@@ -34,12 +37,20 @@ class AppModule extends MainModule {
   @override
   List<Router> get routers => [
         Router(
-          '/',
+          RoutersConst.splash,
           child: (_, args) => SplashPage(),
           transition: TransitionType.noTransition,
         ),
         Router(
-          '/home',
+          RoutersConst.intro,
+          module: IntroModule(),
+        ),
+        Router(
+          RoutersConst.login,
+          module: LoginModule(),
+        ),
+        Router(
+          RoutersConst.home,
           module: HomeModule(),
         ),
       ];

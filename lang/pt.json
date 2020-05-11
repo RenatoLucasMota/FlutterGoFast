@@ -1,5 +1,14 @@
 {
-    "welcome": "Bem vindo ao app!",
-    "login": "Entrar",
-    "logout": "Sair"
+    "intro":{
+        "wellcome": "Bem vindo ao PostIn",
+        "login_now": "ENTRAR AGORA",
+        "or": "ou",
+        "login_google": "ENTRAR COM GOOGLE",
+        "text_step1": "Compartilhe suas fotos favoritas",
+        "text_step2": "Compartilhe momentos, experiência e amizades",
+        "text_step3": "Seja o que você quiser, se comunique e aprenda com os outros"
+    },
+    "login": {
+
+    }
 }

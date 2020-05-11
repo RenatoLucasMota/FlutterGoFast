@@ -14,7 +14,7 @@ class IntroModule extends ChildModule {
   @override
   List<Router> get routers => [
         Router(
-          '/login',
+          '/',
           child: (_, args) => IntroPage(),
         ),
       ];
