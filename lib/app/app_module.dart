@@ -1,18 +1,23 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gofast/app/app_controller.dart';
+import 'package:flutter_gofast/app/core/consts/routers_const.dart';
+import 'package:flutter_gofast/app/interfaces/auth_repository_interface.dart';
+import 'package:flutter_gofast/app/interfaces/shared_repository_interface.dart';
+import 'package:flutter_gofast/app/repositories/auth_repository.dart';
+import 'package:flutter_gofast/app/repositories/client_repository.dart';
+import 'package:flutter_gofast/app/repositories/shared_repository.dart';
+import 'package:flutter_gofast/app/repositories/user_repository.dart';
+import 'package:flutter_gofast/app/views/pages/splash/splash_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'app_controller.dart';
 import 'app_widget.dart';
-import 'core/consts/routers_const.dart';
-import 'core/interfaces/auth_repository_interface.dart';
-import 'core/interfaces/shared_repository_interface.dart';
-import 'core/repositories/auth_repository.dart';
-import 'core/repositories/shared_repository.dart';
-import 'modules/home/home_module.dart';
-import 'modules/intro/intro_module.dart';
-import 'modules/login/login_module.dart';
-import 'modules/splash/splash_page.dart';
+import 'interfaces/firebase_repository_base_interface.dart';
+import 'modules/home_module.dart';
+import 'modules/intro_module.dart';
+import 'modules/login_module.dart';
+
+
 
 class AppModule extends MainModule {
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -24,6 +29,12 @@ class AppModule extends MainModule {
         ),
         Bind<IAuthRepository>(
           (i) => AuthRepository(firebaseAuth),
+        ),
+        Bind(
+          (i) => UserRepository(),
+        ),
+        Bind(
+          (i) => ClientRepository(),
         ),
         // Controllers
         Bind(
