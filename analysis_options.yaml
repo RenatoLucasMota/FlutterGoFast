@@ -6,3 +6,4 @@ linter:
       avoid_function_literals_in_foreach_calls: false
       prefer_relative_imports: false
       omit_local_variable_types: false
+      use_setters_to_change_properties: false

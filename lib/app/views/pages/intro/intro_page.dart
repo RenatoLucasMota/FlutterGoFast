@@ -1,4 +1,5 @@
-import 'package:flutter_gofast/app/controllers/intro_controller.dart';
+import 'package:flutter_gofast/app/controllers/auth/auth_controller.dart';
+import 'package:flutter_gofast/app/controllers/intro/intro_controller.dart';
 import 'package:flutter_gofast/app/core/consts/colors_consts.dart';
 import 'package:flutter_gofast/app/core/localization/app_translate.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -12,6 +13,15 @@ class IntroPage extends StatefulWidget {
 }
 
 class _IntroPageState extends ModularState<IntroPage, IntroController> {
+
+  var _authController;
+
+  @override
+  void initState() { 
+    _authController = Modular.get<AuthController>();
+    super.initState();
+  }
+
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -48,12 +58,13 @@ class _IntroPageState extends ModularState<IntroPage, IntroController> {
                       height: _height * 0.06,
                     ),
                     RaisedButton(
-                        onPressed: () {},
-                        child: Text(
-                          AppTranslate(context).text('intro.login_now'),
-                          style: Theme.of(context).textTheme.bodyText2.copyWith(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        )),
+                      onPressed: controller.doEnter,
+                      child: Text(
+                        AppTranslate(context).text('intro.login_now'),
+                        style: Theme.of(context).textTheme.bodyText2.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ],
                 ),
                 Column(
@@ -65,8 +76,10 @@ class _IntroPageState extends ModularState<IntroPage, IntroController> {
                             height: 1, color: ColorsConst.grey400, width: 100),
                         Text(
                           AppTranslate(context).text('intro.or'),
-                          style: Theme.of(context).textTheme.bodyText2.copyWith(
-                              color: ColorsConst.grey600),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText2
+                              .copyWith(color: ColorsConst.grey600),
                         ),
                         Container(
                             height: 1, color: ColorsConst.grey400, width: 100),
@@ -77,7 +90,7 @@ class _IntroPageState extends ModularState<IntroPage, IntroController> {
                     ),
                     RaisedButton(
                       color: Colors.red,
-                      onPressed: () {},
+                      onPressed: () async => _authController.doLoginGoogle(),
                       child: Text(
                         AppTranslate(context).text('intro.login_google'),
                         style: Theme.of(context).textTheme.bodyText2.copyWith(

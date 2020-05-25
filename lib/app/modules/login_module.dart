@@ -1,4 +1,4 @@
-import 'package:flutter_gofast/app/controllers/login_controller.dart';
+import 'package:flutter_gofast/app/controllers/login/login_controller.dart';
 import 'package:flutter_gofast/app/views/pages/login/login_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

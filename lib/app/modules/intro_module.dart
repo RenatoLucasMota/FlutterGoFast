@@ -1,4 +1,4 @@
-import 'package:flutter_gofast/app/controllers/intro_controller.dart';
+import 'package:flutter_gofast/app/controllers/intro/intro_controller.dart';
 import 'package:flutter_gofast/app/views/pages/intro/intro_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

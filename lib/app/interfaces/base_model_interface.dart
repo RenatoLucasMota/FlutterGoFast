@@ -5,9 +5,9 @@ abstract class IBaseModelInterface {
 
   Map toMap(); 
 
-  Map toBaseMap();
+  IBaseModelInterface();
 
-  void fromBaseMap(DocumentSnapshot document);
+  IBaseModelInterface.fromMap(DocumentSnapshot document);
 
   void disableDocument();
 
