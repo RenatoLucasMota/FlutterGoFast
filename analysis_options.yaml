@@ -7,3 +7,5 @@ linter:
       prefer_relative_imports: false
       omit_local_variable_types: false
       use_setters_to_change_properties: false
+      avoid_catches_without_on_clauses: false
+      one_member_abstracts: false

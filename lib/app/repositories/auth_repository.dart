@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_gofast/app/core/errors/register_error_interceptor.dart';
 import 'package:flutter_gofast/app/core/responses/response_builder.dart';
 import 'package:flutter_gofast/app/core/responses/response_defult.dart';
 import 'package:flutter_gofast/app/interfaces/auth_repository_interface.dart';
@@ -45,7 +46,7 @@ class AuthRepository implements IAuthRepository {
       }
       return ResponseBuilder.success<FirebaseUser>(
           object: firebaseUser, message: 'Logou com sucesso');
-    } on Exception catch (e) {
+    } catch (e) {
       return ResponseBuilder.failed(
           object: e, message: 'Falha ao Logar com Google. e: ${e.toString()}');
     }
@@ -83,8 +84,11 @@ class AuthRepository implements IAuthRepository {
           return ResponseBuilder.success<FirebaseUser>(object: auth.user);
         },
       );
-    } on Exception catch (e) {
-      return ResponseBuilder.failed(object: e, message: e.toString());
+    } catch (e) {
+      return ResponseBuilder.failed(
+          object: e,
+          message: e.code,
+          errorInterceptor: RegisterErrorInterceptor());
     }
   }
 }

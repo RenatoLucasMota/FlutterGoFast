@@ -5,9 +5,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 class RegisterModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        Bind(
-          (i) => RegisterController(),
-        ),
+        Bind((i) => RegisterController()),
       ];
 
   @override

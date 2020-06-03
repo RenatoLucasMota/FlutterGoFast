@@ -3,6 +3,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class IntroController {
   void doEnter() {
-    Modular.to.pushNamed(RoutersConst.login);
+    Modular.to.pushReplacementNamed(RoutersConst.login);
   }
 }

@@ -29,7 +29,6 @@ class AppModule extends MainModule {
         Bind<IAuthRepository>(
           (i) => AuthRepository(firebaseAuth),
         ),
-
         // Controllers
         Bind(
           (i) => AppController(),

@@ -6,6 +6,8 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.6.0 <3.0.0"
 
+#flutter packages pub run build_runner build --delete-conflicting-outputs
+
 dependencies:
   flutter:
     sdk: flutter

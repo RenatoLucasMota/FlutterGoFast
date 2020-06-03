@@ -26,24 +26,42 @@ mixin _$AppController on _AppControllerBase, Store {
     }, _$themeAppAtom, name: '${_$themeAppAtom.name}_set');
   }
 
+  final _$themeModeAtom = Atom(name: '_AppControllerBase.themeMode');
+
+  @override
+  ThemeMode get themeMode {
+    _$themeModeAtom.context.enforceReadPolicy(_$themeModeAtom);
+    _$themeModeAtom.reportObserved();
+    return super.themeMode;
+  }
+
+  @override
+  set themeMode(ThemeMode value) {
+    _$themeModeAtom.context.conditionallyRunInAction(() {
+      super.themeMode = value;
+      _$themeModeAtom.reportChanged();
+    }, _$themeModeAtom, name: '${_$themeModeAtom.name}_set');
+  }
+
   final _$loadThemeDataAsyncAction = AsyncAction('loadThemeData');
 
   @override
-  Future loadThemeData() {
+  Future<void> loadThemeData() {
     return _$loadThemeDataAsyncAction.run(() => super.loadThemeData());
   }
 
   final _$setThemeDataAsyncAction = AsyncAction('setThemeData');
 
   @override
-  Future setThemeData(ThemeMode themeMode, {bool saveShared = true}) {
+  Future<void> setThemeData(ThemeMode themeMode, {bool saveShared = true}) {
     return _$setThemeDataAsyncAction
         .run(() => super.setThemeData(themeMode, saveShared: saveShared));
   }
 
   @override
   String toString() {
-    final string = 'themeApp: ${themeApp.toString()}';
+    final string =
+        'themeApp: ${themeApp.toString()},themeMode: ${themeMode.toString()}';
     return '{$string}';
   }
 }
